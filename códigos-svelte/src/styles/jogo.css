@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Galindo&display=swap");
+
+html,
+body {
+    height: 100%;
+    background-color: #2E1A47;
+    font-family: 'Galindo', sans-serif;
+}
+
+#principal,
+#teclado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+}
+
+.linha {
+    display: inherit;
+}
+
+div.caixa {
+    background-color: #ccb3a7;
+    width: 56px;
+    height: 62px;
+    margin-top: 5px;
+    margin-right: 5px;
+    border-radius: 7px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px #9c5b74;
+}
+
+.verde {
+    background-color: green !important;
+
+}
+
+.laranja {
+    background-color: orange !important;
+
+}
+
+.azul {
+    background-color: blue !important;
+
+}
+
+.vermelho {
+    background-color: red !important;
+
+}
+
+.delete,
+.enter {
+    font-size: 25px;
+    text-transform: capitalize;
+}
+
+.delete {
+    width: 120px;
+    
+}
+
+.enter {
+    width: 110px;
+}
+
+button.botao, .delete, .enter
+ {
+    font-family: "Galindo", sans-serif;
+    background-color: #421d87;
+    border: none;
+    display: inline-block;
+    padding: .5rem 1rem;
+    margin: 3px;
+    font-size: 25px;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 1s;
+}
+
+button:hover {
+    background: transparent;
+}
+
+h1 {
+    color: white;
+    font-size: 50px;
+    margin: 1px;
+    font-family: "Galindo", sans-serif;
+    text-align: center;
+}
