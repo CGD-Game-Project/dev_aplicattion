@@ -1,29 +1,26 @@
 <script>
-    import global from "../../styles/global.css";
-    import teclado from "../../styles/teclado.css";
+    import { } from "../../styles/teclado.css";
+    import { } from "../../styles/global.css";
 </script>
 
-<main>
-    <header>
-        <nav class="nav-bar">
-            <div class="titulo">
-                <h1>TERMO</h1>
-            </div>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
 
-            <div class="nav-list">
-                <ul>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Sobre</a>
-                    </li>
-                    <li class="nav-item">?</li>
-                </ul>
+<main>   
+   <header>
+        <div class="container-1">
+            <div class="menu">
+                <nav>
+                    <button><a href="/"><i class="bi bi-house"></i>Home</a></button>
+                    <button><a href="/sobre"><i class="bi bi-person-raised-hand"></i>Sobre</a></button>
+                </nav>
             </div>
-        </nav>
-    </header>
-
+            <div class="titulo">pitaco</div>
+        </div>
+   </header> 
+   
+       
     <div id="principal">
         <!-- Array externo que representa a linha -->
         {#each Array(6) as _, i}
@@ -38,7 +35,7 @@
 
     <div class="container">
         <div class="teclado">
-            <div class="row">
+            <div class="row1">
                 <button class="tecla">Q</button>
                 <button class="tecla">W</button>
                 <button class="tecla">E</button>
@@ -50,7 +47,7 @@
                 <button class="tecla">O</button>
                 <button class="tecla">P</button>
             </div>
-            <div class="row">
+            <div class="row2">
                 <button class="tecla">A</button>
                 <button class="tecla">S</button>
                 <button class="tecla">D</button>
@@ -60,9 +57,9 @@
                 <button class="tecla">J</button>
                 <button class="tecla">K</button>
                 <button class="tecla">L</button>
-                <button class="delete">DELETE</button>
+                <button class="delete"><i class="bi bi-backspace"></i></button>
             </div>
-            <div class="row">
+            <div class="row3">
                 <button class="tecla">Z</button>
                 <button class="tecla">X</button>
                 <button class="tecla">C</button>
@@ -74,42 +71,55 @@
             </div>
         </div>
     </div>
+    
 </main>
 
 <style>
-    nav {
-        background-color: black;
-        color: white;
-        text-align: center;
-        font-weight: bold;
-        padding: 10px;
-        font-size: 2em;
+
+    main {
+        width: 100%;  
     }
-    .nav-list {
-        display: flex;
-        align-items: left;
-    }
-    .nav-list ul{
-        display: flex;
-        justify-content: center;
-        list-style: none;
-        
-    }
-    .nav-item {
-        margin: 0 15px;
-    }    
-    .nav-link{
-        text-decoration: none;
-        font-size: 1.15rem;
-        color: #fff;
-        font-weight: 400;
-    }
+
+.container-1{
+    max-width: 120vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+header{
+    width: 100%;
+}
+
+.titulo{
+    font-size: 6vh;
+    font-weight: 600;
+    line-height: 6vh;
+    height: 4vh;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff ;
+    position: absolute;
+    font-family: 'Galindo', sans-serif;
+    margin-top: 7vh;
+}
+.menu{
+    width: 40%;  
+    position: absolute;
+    margin-top: 7vh;
+}
 
     #principal {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 50px;
+        justify-content: center;
+        margin: 5vh;
+        margin-top: 8%;
     }
 
     .linha {
@@ -117,13 +127,17 @@
     }
 
     div.caixa {
-        background-color: #ccb3a7;
-        width: 67px;
-        height: 67px;
-        margin-top: 5px;
-        margin-right: 5px;
-        border-radius: 7px;
+        background-color: transparent;
+        border: solid;
+        border-color: gray;
+        width: 8vh;
+        height: 8vh;
+        margin-top: 1vh;
+        margin-right: 0.8vh;
+        border-radius: 1vh;
         cursor: pointer;
-        box-shadow: 1px 1px 1px #9c5b74;
+
     }
 </style>
+
+

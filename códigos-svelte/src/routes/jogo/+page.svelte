@@ -2,11 +2,11 @@
     // @ts-nocheck
 
     import "../../styles/jogo.css";
-
+   
     /** @param {string} palpite
      *  @param {string} palavra_secreta
      */
-    export function compararPalpite(palpite, palavra_secreta) {
+     function compararPalpite(palpite, palavra_secreta) {
         palpite = palpite.toUpperCase();
         palavra_secreta = palavra_secreta.toUpperCase();
         const resultado = { corretas: 0, incorretas: 0 };
@@ -306,17 +306,17 @@
         return saida;
     }
 
-    export let linhaAtual = 1;
-    export let selecionado = `l${linhaAtual}_coluna_1`;
+     let linhaAtual = 1;
+     let selecionado = `l${linhaAtual}_coluna_1`;
 
     /** @param {string} id */
-    export function selecionar(id) {
+     function selecionar(id) {
         if (id.startsWith(`l${linhaAtual}`)) {
             selecionado = id;
         }
     }
 
-    export function teclaPressionada(tecla) {
+     function teclaPressionada(tecla) {
         let codigoTecla = tecla.keyCode;
 
         // Código das teclas de A a Z
@@ -335,7 +335,7 @@
     }
 
     /** @param {string} letra */
-    export function letra(letra) {
+     function letra(letra) {
         let p = document.createElement("p");
         p.innerText = letra.toUpperCase();
 
@@ -350,12 +350,12 @@
         }
     }
 
-    export function deletar() {
+     function deletar() {
         let elemento = document.getElementById(selecionado);
         elemento.innerHTML = "";
     }
 
-    export function enter() {
+     function enter() {
         let palavra = "";
 
         let linha = document.getElementById(`linha_${linhaAtual}`);
@@ -406,9 +406,9 @@
         }
     }
 </script>
-
-<h1>TERMO</h1>
-
+<nav>
+<h1>TERMO</h1> <a href = "/">Voltar para o menu inicial </a>
+</nav>
 <div id="principal">
     <!-- Array externo que representa a linha -->
     {#each Array(6) as _, i}

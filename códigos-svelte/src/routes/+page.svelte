@@ -1,7 +1,19 @@
+<script>
+    
+</script>
 
-<h1>TELA INICIAL</h1>
+<main>
+   
+    <h1>TELA INICIAL</h1>
+        <button><a href="/jogo3">Jogar</a></button>
+        <button><a href="/sobre">Sobre</a></button>
+  
+</main>
 
-<ul>
-    <li><a href="/sobre">Sobre</a></li>
-    <li><a href="/jogo">Jogo</a></li>
-</ul>
+
+
+
+
+
+
+
