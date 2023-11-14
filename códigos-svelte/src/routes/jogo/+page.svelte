@@ -389,15 +389,7 @@
                 }
             }
 
-            if (
-                !(
-                    resultado.letra_0 === 2 &&
-                    resultado.letra_1 === 2 &&
-                    resultado.letra_2 === 2 &&
-                    resultado.letra_3 === 2 &&
-                    resultado.letra_4 === 2
-                )
-            ) {
+            if (!( resultado.letra_0 === 2 && resultado.letra_1 === 2 && resultado.letra_2 === 2 && resultado.letra_3 === 2 && resultado.letra_4 === 2)) {
                 if (linhaAtual < 6) {
                     linhaAtual += 1;
                     selecionado = `l${linhaAtual}_coluna_1`;

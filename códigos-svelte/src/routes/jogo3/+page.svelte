@@ -12,16 +12,15 @@
         <div class="container-1">
             <div class="menu">
                 <nav>
-                    <button><a href="/"><i class="bi bi-house"></i>Home</a></button>
-                    <button><a href="/sobre"><i class="bi bi-person-raised-hand"></i>Sobre</a></button>
+                    <button class="home"><a href="/"><i class="bi bi-house"></i></a></button>
+                    <button class="duvida">?</button>
                 </nav>
             </div>
             <div class="titulo">pitaco</div>
         </div>
    </header> 
    
-       
-    <div id="principal">
+     <div id="principal">
         <!-- Array externo que representa a linha -->
         {#each Array(6) as _, i}
             <div id="linha_{i + 1}" class="linha">
@@ -80,38 +79,39 @@
         width: 100%;  
     }
 
-.container-1{
-    max-width: 120vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-}
-header{
-    width: 100%;
-}
+    .container-1{
+        max-width: 120vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        }
 
-.titulo{
-    font-size: 6vh;
-    font-weight: 600;
-    line-height: 6vh;
-    height: 4vh;
-    margin: 0;
-    padding: 0;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff ;
-    position: absolute;
-    font-family: 'Galindo', sans-serif;
-    margin-top: 7vh;
-}
-.menu{
-    width: 40%;  
-    position: absolute;
-    margin-top: 7vh;
-}
+    header{
+    width: 100%;
+    }
+
+    .titulo{
+        font-size: 4vh;
+        font-weight: 600;
+        line-height: 6vh;
+        height: 4vh;
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff ;
+        position: absolute;
+        font-family: 'Galindo', sans-serif;
+        margin-top: 7vh;
+    }
+    .menu{
+        width: 40%;  
+        position: absolute;
+        margin-top: 7vh;
+    }
 
     #principal {
         display: flex;
@@ -127,17 +127,36 @@ header{
     }
 
     div.caixa {
-        background-color: transparent;
-        border: solid;
-        border-color: gray;
+        background-color: #CCB3A7;
+        border: none;
         width: 8vh;
         height: 8vh;
         margin-top: 1vh;
         margin-right: 0.8vh;
         border-radius: 1vh;
         cursor: pointer;
-
     }
+
+    .home, .duvida{
+       cursor: pointer;
+       padding: 0;
+       width: 4vh;
+       height: 4vh;
+       background-color: transparent;
+       color: #B7AEB4;
+       line-height: 1em;
+       font-size: 2vh;
+       font-weight: 400;
+       border: 2px solid #B7AEB4;
+       border-radius: 20%;
+       margin: 0 0.25vh;
+    }
+    a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #B7AEB4;
+    }
+
 </style>
-
-

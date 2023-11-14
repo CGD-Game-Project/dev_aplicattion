@@ -6,8 +6,8 @@
  }
  
  button.tecla, .delete, .enter {
-     background-color: gray;
-    
+     background-color: #421D87;
+     border: none;
      display: inline-block;
      padding: .5vh 1vh;
      margin: .3vh;
