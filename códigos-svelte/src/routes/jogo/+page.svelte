@@ -1,461 +1,162 @@
 <script>
-    // @ts-nocheck
-
-    import "../../styles/jogo.css";
-   
-    /** @param {string} palpite
-     *  @param {string} palavra_secreta
-     */
-     function compararPalpite(palpite, palavra_secreta) {
-        palpite = palpite.toUpperCase();
-        palavra_secreta = palavra_secreta.toUpperCase();
-        const resultado = { corretas: 0, incorretas: 0 };
-        const saida = {
-            letra_0: 0,
-            letra_1: 0,
-            letra_2: 0,
-            letra_3: 0,
-            letra_4: 0,
-        };
-
-        for (let i = 0; i < palavra_secreta.length; i++) {
-            if (palavra_secreta[i] === palpite[i]) {
-                resultado.corretas++;
-                saida["letra_" + i] = 2;
-            } else {
-                if (palavra_secreta[i] === "ç" && palpite[i] === "c") {
-                    resultado.corretas++;
-                    saida["letra_" + i] = 2;
-                } else if (
-                    "áâã".includes(palavra_secreta[i]) &&
-                    palpite[i] === "a"
-                ) {
-                    resultado.corretas++;
-                    saida["letra_" + i] = 2;
-                } else if (
-                    "éê".includes(palavra_secreta[i]) &&
-                    palpite[i] === "e"
-                ) {
-                    resultado.corretas++;
-                    saida["letra_" + i] = 2;
-                } else if (palavra_secreta[i] === "í" && palpite[i] === "i") {
-                    resultado.corretas++;
-                    saida["letra_" + i] = 2;
-                } else if (
-                    "óôõ".includes(palavra_secreta[i]) &&
-                    palpite[i] === "o"
-                ) {
-                    resultado.corretas++;
-                    saida["letra_" + i] = 2;
-                } else if (
-                    "úû".includes(palavra_secreta[i]) &&
-                    palpite[i] === "u"
-                ) {
-                    resultado.corretas++;
-                    saida["letra_" + i] = 2;
-                } else {
-                    resultado.incorretas++;
-                    saida["letra_" + i] = 0;
-                }
-            }
-        }
-
-        if (resultado.corretas !== 5) {
-            for (let i = 0; i < palavra_secreta.length; i++) {
-                if (saida["letra_" + 0] !== 2) {
-                    if (
-                        palpite[0] === palavra_secreta[i] &&
-                        saida["letra_" + 0] === 0
-                    ) {
-                        saida["letra_" + 0] = 1;
-                    } else {
-                        if (
-                            palavra_secreta[i] === "ç" &&
-                            palpite[0] === "c" &&
-                            saida["letra_" + 0] === 0
-                        ) {
-                            saida["letra_" + 0] = 1;
-                        } else if (
-                            "áâã".includes(palavra_secreta[i]) &&
-                            palpite[0] === "a" &&
-                            saida["letra_" + 0] === 0
-                        ) {
-                            saida["letra_" + 0] = 1;
-                        } else if (
-                            "éê".includes(palavra_secreta[i]) &&
-                            palpite[0] === "e" &&
-                            saida["letra_" + 0] === 0
-                        ) {
-                            saida["letra_" + 0] = 1;
-                        } else if (
-                            palavra_secreta[i] === "í" &&
-                            palpite[0] === "i" &&
-                            saida["letra_" + 0] === 0
-                        ) {
-                            saida["letra_" + 0] = 1;
-                        } else if (
-                            "óôõ".includes(palavra_secreta[i]) &&
-                            palpite[0] === "o" &&
-                            saida["letra_" + 0] === 0
-                        ) {
-                            saida["letra_" + 0] = 1;
-                        } else if (
-                            "úû".includes(palavra_secreta[i]) &&
-                            palpite[0] === "u" &&
-                            saida["letra_" + 0] === 0
-                        ) {
-                            saida["letra_" + 0] = 1;
-                        }
-                    }
-                }
-            }
-            for (let i = 0; i < palavra_secreta.length; i++) {
-                if (saida["letra_" + 1] !== 2) {
-                    if (
-                        palpite[1] === palavra_secreta[i] &&
-                        saida["letra_" + 1] === 0
-                    ) {
-                        saida["letra_" + 1] = 1;
-                    } else {
-                        if (
-                            palavra_secreta[i] === "ç" &&
-                            palpite[1] === "c" &&
-                            saida["letra_" + 1] === 0
-                        ) {
-                            saida["letra_" + 1] = 1;
-                        } else if (
-                            "áâã".includes(palavra_secreta[i]) &&
-                            palpite[1] === "a" &&
-                            saida["letra_" + 1] === 0
-                        ) {
-                            saida["letra_" + 1] = 1;
-                        } else if (
-                            "éê".includes(palavra_secreta[i]) &&
-                            palpite[1] === "e" &&
-                            saida["letra_" + 1] === 0
-                        ) {
-                            saida["letra_" + 1] = 1;
-                        } else if (
-                            palavra_secreta[i] === "í" &&
-                            palpite[1] === "i" &&
-                            saida["letra_" + 1] === 0
-                        ) {
-                            saida["letra_" + 1] = 1;
-                        } else if (
-                            "óôõ".includes(palavra_secreta[i]) &&
-                            palpite[1] === "o" &&
-                            saida["letra_" + 1] === 0
-                        ) {
-                            saida["letra_" + 1] = 1;
-                        } else if (
-                            "úû".includes(palavra_secreta[i]) &&
-                            palpite[1] === "u" &&
-                            saida["letra_" + 1] === 0
-                        ) {
-                            saida["letra_" + 1] = 1;
-                        }
-                    }
-                }
-            }
-            for (let i = 0; i < palavra_secreta.length; i++) {
-                if (saida["letra_" + 2] !== 2) {
-                    if (
-                        palpite[2] === palavra_secreta[i] &&
-                        saida["letra_" + 2] === 0
-                    ) {
-                        saida["letra_" + 2] = 1;
-                    } else {
-                        if (
-                            palavra_secreta[i] === "ç" &&
-                            palpite[2] === "c" &&
-                            saida["letra_" + 2] === 0
-                        ) {
-                            saida["letra_" + 2] = 1;
-                        } else if (
-                            "áâã".includes(palavra_secreta[i]) &&
-                            palpite[2] === "a" &&
-                            saida["letra_" + 2] === 0
-                        ) {
-                            saida["letra_" + 2] = 1;
-                        } else if (
-                            "éê".includes(palavra_secreta[i]) &&
-                            palpite[2] === "e" &&
-                            saida["letra_" + 2] === 0
-                        ) {
-                            saida["letra_" + 2] = 1;
-                        } else if (
-                            palavra_secreta[i] === "í" &&
-                            palpite[2] === "i" &&
-                            saida["letra_" + 2] === 0
-                        ) {
-                            saida["letra_" + 2] = 1;
-                        } else if (
-                            "óôõ".includes(palavra_secreta[i]) &&
-                            palpite[2] === "o" &&
-                            saida["letra_" + 2] === 0
-                        ) {
-                            saida["letra_" + 2] = 1;
-                        } else if (
-                            "úû".includes(palavra_secreta[i]) &&
-                            palpite[2] === "u" &&
-                            saida["letra_" + 2] === 0
-                        ) {
-                            saida["letra_" + 2] = 1;
-                        }
-                    }
-                }
-            }
-            for (let i = 0; i < palavra_secreta.length; i++) {
-                if (saida["letra_" + 3] !== 2) {
-                    if (
-                        palpite[3] === palavra_secreta[i] &&
-                        saida["letra_" + 3] === 0
-                    ) {
-                        saida["letra_" + 3] = 1;
-                    } else {
-                        if (
-                            palavra_secreta[i] === "ç" &&
-                            palpite[3] === "c" &&
-                            saida["letra_" + 3] === 0
-                        ) {
-                            saida["letra_" + 3] = 1;
-                        } else if (
-                            "áâã".includes(palavra_secreta[i]) &&
-                            palpite[3] === "a" &&
-                            saida["letra_" + 3] === 0
-                        ) {
-                            saida["letra_" + 3] = 1;
-                        } else if (
-                            "éê".includes(palavra_secreta[i]) &&
-                            palpite[3] === "e" &&
-                            saida["letra_" + 3] === 0
-                        ) {
-                            saida["letra_" + 3] = 1;
-                        } else if (
-                            palavra_secreta[i] === "í" &&
-                            palpite[3] === "i" &&
-                            saida["letra_" + 3] === 0
-                        ) {
-                            saida["letra_" + 3] = 1;
-                        } else if (
-                            "óôõ".includes(palavra_secreta[i]) &&
-                            palpite[3] === "o" &&
-                            saida["letra_" + 3] === 0
-                        ) {
-                            saida["letra_" + 3] = 1;
-                        } else if (
-                            "úû".includes(palavra_secreta[i]) &&
-                            palpite[3] === "u" &&
-                            saida["letra_" + 3] === 0
-                        ) {
-                            saida["letra_" + 3] = 1;
-                        }
-                    }
-                }
-            }
-            for (let i = 0; i < palavra_secreta.length; i++) {
-                if (saida["letra_" + 4] !== 2) {
-                    if (
-                        palpite[4] === palavra_secreta[i] &&
-                        saida["letra_" + 4] === 0
-                    ) {
-                        saida["letra_" + 4] = 1;
-                    } else {
-                        if (
-                            palavra_secreta[i] === "ç" &&
-                            palpite[4] === "c" &&
-                            saida["letra_" + 4] === 0
-                        ) {
-                            saida["letra_" + 4] = 1;
-                        } else if (
-                            "áâã".includes(palavra_secreta[i]) &&
-                            palpite[4] === "a" &&
-                            saida["letra_" + 4] === 0
-                        ) {
-                            saida["letra_" + 4] = 1;
-                        } else if (
-                            "éê".includes(palavra_secreta[i]) &&
-                            palpite[4] === "e" &&
-                            saida["letra_" + 4] === 0
-                        ) {
-                            saida["letra_" + 4] = 1;
-                        } else if (
-                            palavra_secreta[i] === "í" &&
-                            palpite[4] === "i" &&
-                            saida["letra_" + 4] === 0
-                        ) {
-                            saida["letra_" + 4] = 1;
-                        } else if (
-                            "óôõ".includes(palavra_secreta[i]) &&
-                            palpite[4] === "o" &&
-                            saida["letra_" + 4] === 0
-                        ) {
-                            saida["letra_" + 4] = 1;
-                        } else if (
-                            "úû".includes(palavra_secreta[i]) &&
-                            palpite[4] === "u" &&
-                            saida["letra_" + 4] === 0
-                        ) {
-                            saida["letra_" + 4] = 1;
-                        }
-                    }
-                }
-            }
-        }
-
-        return saida;
-    }
-
-     let linhaAtual = 1;
-     let selecionado = `l${linhaAtual}_coluna_1`;
-
-    /** @param {string} id */
-     function selecionar(id) {
-        if (id.startsWith(`l${linhaAtual}`)) {
-            selecionado = id;
-        }
-    }
-
-     function teclaPressionada(tecla) {
-        let codigoTecla = tecla.keyCode;
-
-        // Código das teclas de A a Z
-        if (codigoTecla >= 65 && codigoTecla <= 90) {
-            letra(String.fromCharCode(codigoTecla));
-        }
-
-        // Código das teclas backspace e delete
-        if (codigoTecla === 8 || codigoTecla === 46) {
-            deletar();
-        }
-        // Código das teclas Enter
-        if (codigoTecla === 13) {
-            enter();
-        }
-    }
-
-    /** @param {string} letra */
-     function letra(letra) {
-        let p = document.createElement("p");
-        p.innerText = letra.toUpperCase();
-
-        let elemento = document.getElementById(selecionado);
-        elemento.innerHTML = "";
-        elemento.appendChild(p);
-
-        let proximo = Number(selecionado[10]) + 1;
-
-        if (proximo <= 5) {
-            selecionado = selecionado.substring(0, 10) + proximo;
-        }
-    }
-
-     function deletar() {
-        let elemento = document.getElementById(selecionado);
-        elemento.innerHTML = "";
-    }
-
-     function enter() {
-        let palavra = "";
-
-        let linha = document.getElementById(`linha_${linhaAtual}`);
-
-        let colunas = linha.children;
-
-        for (const coluna of colunas) {
-            if (coluna.children && coluna.children[0]) {
-                palavra += coluna.children[0].innerText;
-            }
-        }
-
-        if (palavra.length === 5) {
-            let resultado = compararPalpite(palavra, "criar");
-
-            for (const letra_ in resultado) {
-                let i = letra_[6];
-
-                colunas[i].classList.remove("verde");
-
-                switch (resultado[letra_]) {
-                    case 0:
-                        colunas[i].classList.add("vermelho");
-                        break;
-                    case 1:
-                        colunas[i].classList.add("laranja");
-                        break;
-                    case 2:
-                        colunas[i].classList.add("azul");
-                        break;
-                }
-            }
-
-            if (!( resultado.letra_0 === 2 && resultado.letra_1 === 2 && resultado.letra_2 === 2 && resultado.letra_3 === 2 && resultado.letra_4 === 2)) {
-                if (linhaAtual < 6) {
-                    linhaAtual += 1;
-                    selecionado = `l${linhaAtual}_coluna_1`;
-                }
-            }
-        }
-    }
+    import { } from "../../styles/teclado.css";
+    import { } from "../../styles/global.css";
 </script>
-<nav>
-<h1>TERMO</h1> <a href = "/">Voltar para o menu inicial </a>
-</nav>
-<div id="principal">
-    <!-- Array externo que representa a linha -->
-    {#each Array(6) as _, i}
-        <div id="linha_{i + 1}" class="linha">
-            <!-- Array interno que representa a coluna -->
-            {#each Array(5) as _, j}
-                <!-- svelte-ignore a11y-click-events-have-key-events -->
-                <!-- svelte-ignore a11y-no-static-element-interactions -->
-                <div
-                    id="l{i + 1}_coluna_{j + 1}"
-                    class={selecionado === `l${i + 1}_coluna_${j + 1}`
-                        ? "caixa verde"
-                        : "caixa"}
-                    on:click={() => selecionar(`l${i + 1}_coluna_${j + 1}`)}
-                />
-            {/each}
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<main>   
+   <header>
+        <div class="container-1">
+            <div class="menu">
+                <nav>
+                    <button class="home"><a href="/"><i class="bi bi-house"></i></a></button>
+                    <button class="duvida">?</button>
+                </nav>
+            </div>
+            <div class="titulo">pitaco</div>
         </div>
-    {/each}
-</div>
+   </header> 
+   
+     <div id="principal">
+        <!-- Array externo que representa a linha -->
+        {#each Array(6) as _, i}
+            <div id="linha_{i + 1}" class="linha">
+                <!-- Array interno que representa a coluna -->
+                {#each Array(5) as _, j}
+                    <div id="l{i + 1}_coluna_{j + 1}" class="caixa" />
+                {/each}
+            </div>
+        {/each}
+    </div>
 
-<div id="teclado">
-    <div class="linha1">
-        <button class="botao" on:click={() => letra("q")}>Q</button>
-        <button class="botao" on:click={() => letra("w")}>W</button>
-        <button class="botao" on:click={() => letra("e")}>E</button>
-        <button class="botao" on:click={() => letra("r")}>R</button>
-        <button class="botao" on:click={() => letra("t")}>T</button>
-        <button class="botao" on:click={() => letra("y")}>Y</button>
-        <button class="botao" on:click={() => letra("u")}>U</button>
-        <button class="botao" on:click={() => letra("i")}>I</button>
-        <button class="botao" on:click={() => letra("o")}>O</button>
-        <button class="botao" on:click={() => letra("p")}>P</button>
+    <div class="container">
+        <div class="teclado">
+            <div class="row1">
+                <button class="tecla">Q</button>
+                <button class="tecla">W</button>
+                <button class="tecla">E</button>
+                <button class="tecla">R</button>
+                <button class="tecla">T</button>
+                <button class="tecla">Y</button>
+                <button class="tecla">U</button>
+                <button class="tecla">I</button>
+                <button class="tecla">O</button>
+                <button class="tecla">P</button>
+            </div>
+            <div class="row2">
+                <button class="tecla">A</button>
+                <button class="tecla">S</button>
+                <button class="tecla">D</button>
+                <button class="tecla">F</button>
+                <button class="tecla">G</button>
+                <button class="tecla">H</button>
+                <button class="tecla">J</button>
+                <button class="tecla">K</button>
+                <button class="tecla">L</button>
+                <button class="delete"><i class="bi bi-backspace"></i></button>
+            </div>
+            <div class="row3">
+                <button class="tecla">Z</button>
+                <button class="tecla">X</button>
+                <button class="tecla">C</button>
+                <button class="tecla">V</button>
+                <button class="tecla">B</button>
+                <button class="tecla">N</button>
+                <button class="tecla">M</button>
+                <button class="enter">ENTER</button>
+            </div>
+        </div>
     </div>
-    <div class="linha2">
-        <button class="botao" on:click={() => letra("a")}>A</button>
-        <button class="botao" on:click={() => letra("s")}>S</button>
-        <button class="botao" on:click={() => letra("d")}>D</button>
-        <button class="botao" on:click={() => letra("f")}>F</button>
-        <button class="botao" on:click={() => letra("g")}>G</button>
-        <button class="botao" on:click={() => letra("h")}>H</button>
-        <button class="botao" on:click={() => letra("j")}>J</button>
-        <button class="botao" on:click={() => letra("k")}>K</button>
-        <button class="botao" on:click={() => letra("l")}>L</button>
-        <button class="delete" on:click={() => deletar("delete")}>DELETE</button>
-    </div>
-    <div class="linha3">
-        <button class="botao" on:click={() => letra("z")}>Z</button>
-        <button class="botao" on:click={() => letra("x")}>X</button>
-        <button class="botao" on:click={() => letra("c")}>C</button>
-        <button class="botao" on:click={() => letra("v")}>V</button>
-        <button class="botao" on:click={() => letra("b")}>B</button>
-        <button class="botao" on:click={() => letra("n")}>N</button>
-        <button class="botao" on:click={() => letra("m")}>M</button>
-        <button class="enter" on:click={() => enter("enter")}>ENTER</button>
-    </div>
-</div>
+    
+</main>
 
-<svelte:window on:keydown|preventDefault={teclaPressionada} />
+<style>
+
+    main {
+        width: 100%;  
+    }
+
+    .container-1{
+        max-width: 120vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        }
+
+    header{
+    width: 100%;
+    }
+
+    .titulo{
+        font-size: 4vh;
+        font-weight: 600;
+        line-height: 6vh;
+        height: 4vh;
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff ;
+        position: absolute;
+        font-family: 'Galindo', sans-serif;
+        margin-top: 7vh;
+    }
+    .menu{
+        width: 40%;  
+        position: absolute;
+        margin-top: 7vh;
+    }
+
+    .home, .duvida{
+       cursor: pointer;
+       padding: 0;
+       width: 4vh;
+       height: 4vh;
+       background-color: transparent;
+       color: #B7AEB4;
+       line-height: 1vh;
+       font-size: 2vh;
+       font-weight: 400;
+       border: 2px solid #B7AEB4;
+       border-radius: 20%;
+       margin: 0 0.25vh;
+    }
+
+    a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #B7AEB4;
+    }
+
+    #principal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 5vh;
+        margin-top: 8%;
+    }
+
+    .linha {
+        display: inherit;
+    }
+
+    div.caixa {
+        background-color: #CCB3A7;
+        border: none;
+        width: 8vh;
+        height: 8vh;
+        margin-top: 1vh;
+        margin-right: 0.8vh;
+        border-radius: 1vh;
+        cursor: pointer;
+    }
+</style>

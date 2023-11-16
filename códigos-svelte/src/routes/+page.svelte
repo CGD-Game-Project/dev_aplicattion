@@ -1,13 +1,20 @@
 <script>
     import {  } from "../styles/global.css";
+    
 </script>
 
 <main>
-   
-    <h1>pitaco</h1>
-        <button><a href="/jogo3">Jogar</a></button> <br>
-        <button><a href="/sobre">Sobre</a></button>
-  
+   <span class="content">
+        <span class="n_1">p</span>
+        <span class="n_2">i</span>
+        <span class="n_3">t</span>
+        <span class="n_4">a</span>
+        <span class="n_5">c</span>
+        <span class="n_6">o</span>
+   </span>
+   <br><br><br><br><br>
+        <a href="/jogo">Jogar</a> 
+       <a href="/sobre">Sobre</a>
 </main>
 
 <style>
@@ -16,37 +23,60 @@
         width: 100%;
     }
 
-    h1{
+    span{
     display: flex;
-    width: 100%;
-    height: 45vh;
+    margin: 1vh;
     align-items: center;
+    text-align: center;
     justify-content: center;
     font-family: 'Galindo', sans-serif;
-    font-size: 14vh;
+    font-size: 30vh;
     text-transform: uppercase;
     color: #fff;
+    text-shadow: 1vh 1vh #70B4FD;
     }
-    button{
-       display: block;
-       margin-right: auto;
-       margin-left: auto;
-       width: 50vh;
-       height: 8vh;
-       border-radius: 7vh;
-       border: none;
-       background-color: #beb8c6;
-       cursor: pointer;
-       font-family: 'Galindo', sans-serif;
-       font-size: 4vh;
-       padding-left: 2vh;
-       padding-right: 2vh;
-       margin-bottom: 3vh;
+    
+    .content > span:nth-child(1){
+        -webkit-transform: translateX(-1px) translateY(30px) rotate(-12deg);
+        transform: translateX(-1px) translateY(30px) rotate(-12deg);
+    }
+    .content > span:nth-child(2){
+        -webkit-transform: translateX(-1px) translateY(15px) rotate(-8deg);
+        transform: translateX(-1px) translateY(15px) rotate(-8deg);
+    }
+    .content > span:nth-child(3){
+        -webkit-transform: translateX(-1px) translateY(8px) rotate(-2deg);
+        transform: translateX(-1px) translateY(8px) rotate(-2deg);
+    }
+    .content > span:nth-child(4){
+        -webkit-transform: translateX(-1px) translateY(8px) rotate(-2deg);
+        transform: translateX(-1px) translateY(8px) rotate(2deg);
+    }
+    .content > span:nth-child(5){
+        -webkit-transform: translateX(-1px) translateY(15px) rotate(7deg);
+        transform: translateX(-1px) translateY(15px) rotate(7deg);
+    }
+    .content > span:nth-child(6){
+        -webkit-transform: translateX(-1px) translateY(30px) rotate(-15deg);
+        transform: translateX(-1px) translateY(30px) rotate(15deg);
     }
 
     a{
       text-decoration: none;
-      color: black;
+      color: #F53098;
+      display: flex;
+       margin-right: auto;
+       margin-left: auto;
+       width: 0vh;
+       height: 0vh;
+       font-family: 'Galindo', sans-serif;
+       font-size: 7vh;
+       padding-left: auto;
+       padding-right: auto;
+       margin-bottom: 15vh;
+       text-align: center;
+       align-items: center;
+       justify-content: center;
     }
 </style>
 
