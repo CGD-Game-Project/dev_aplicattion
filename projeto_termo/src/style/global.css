@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Galindo&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --ciano: #145B52;
+    --roxo: #2e1a46;
+    --laranja: #E76A2E;
+    --marrom: #CCB3A7;
+    --preto: black;
+}
+
+body{
+   background-color: #2e1a46; 
+   font-family: 'Galindo', sans-serif;
+}
